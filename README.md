@@ -52,77 +52,54 @@ At the 6th code code, I pick an image of each kind of traffic sign and pack them
 
 #### Preprocessing
 
-The code for this step is contained in the 5th code cell of the IPython notebook.
+The code for this step is contained in the 5th & 7th code cell of the IPython notebook.
 
-As a first step, I decided to convert the images to grayscale because ...
+5th code cell contains various converters I've tried for preprocessing filters.  Unfortunately, all of them do not gain signficantly on accurancy over the grayscale filter.  So on 7th code cell, I still use grayscale.
 
-Here is an example of a traffic sign image before and after grayscaling.
+### Model architecture
 
-
-####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
-
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
-
-To cross validate my model, I randomly split the training data into a training set and validation set. I did this by ...
-
-My final training set had X number of images. My validation set and test set had Y and Z number of images.
-
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
-The code for my final model is located in the seventh cell of the ipython notebook. 
-
-My final model consisted of the following layers:
+No data augumentation is used due to lack of time.  I'll add them later.
+I use the classic LeNet model, which is taught in class without modification.  The code is located in the 8th cell of the ipython notebook.  It's consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6					|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 10x10x16 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16					|
+| Flatten               | outputs 400                                   |
+| Fully connected		| outputs 120 									|
+| RELU					|												|
+| Fully connected		| outputs 84  									|
+| RELU					|												|
+| Fully connected		| outputs 43   									|
+| RELU					|												|
+| Softmax				| outputs probabilities of 43 classes			|
  
 
+The code for training the model is located in the 40th cell of the ipython notebook.  Here is summary of hyperparameters.
+* EPOCHS = 200
+* BATCH_SIZE = 256
+* optimizer = `AdamOptimizer`
+* learning_rate = 0.001
 
-####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+initial weights
+* sigma = 0.05
+* mean = 0
 
-The code for training the model is located in the eigth cell of the ipython notebook. 
-
-To train the model, I used an ....
-
-####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the 36th & 41th cell of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 1.0
+* validation set accuracy of 0.949206349477 
+* test set accuracy of 0.932462391312
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+I choose `LeNet` because it works well on hand written recognition application and most importantly it's the only architecture I'm currently familiar with.  I've tried adding some dropout layers but the test accuracy gets worse so I soon take them away.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+Increasing EPOCH is a simple way to increase accuracy.  Eventhough accuracy grows very slowly after several epochs.  Batch size 256 is obtained via a try-and-error process.  Increasing it or decreasing it all get worse result.
 
 ### Test a Model on New Images
 
