@@ -18,11 +18,11 @@ The goals / steps of this project are the following:
 [image1]: ./pics/p2pic1.png "P2 PIC"
 [image2]: ./pics/p2pic2.png "P2 PIC"
 [image3]: ./pics/p2pic3.png "P2 PIC"
-[websign1]: ./test_images/children.png "websign"
-[websign2]: ./test_images/construction.png "websign"
-[websign3]: ./test_images/pedestrian.png "websign"
+[websign1]: ./test_images/pedestrian.png "websign"
+[websign2]: ./test_images/children.png "websign"
+[websign3]: ./test_images/stop.png "websign"
 [websign4]: ./test_images/speed_limit_30.png "websign"
-[websign5]: ./test_images/stop.png "websign"
+[websign5]: ./test_images/construction.png "websign"
 
 ## Rubric Points
 
@@ -132,7 +132,7 @@ Here are five German traffic signs that I found on the web:
 ![alt text][websign1] ![alt text][websign2] ![alt text][websign3] 
 ![alt text][websign4] ![alt text][websign5]
 
-Their size are vary and some of them are protected with watermark.  I chose these pictures with purpose to test the capability of my model..
+Their sizees are vary and some of them are protected with watermark.  I chose these pictures with purpose to test the capability of my model..
 
 #### Performance on New Images
 
