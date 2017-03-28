@@ -156,7 +156,6 @@ The code for making predictions on my final model is located in the 47th cell of
 
 For the 1th image, this is a wrong prediction.  The model is 100% sure that this is 30km/h limit sign (probability of 1) but it's actually an pedestrian sign.  The probability of all other traffic signs are almost 0.
 
-
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| Speed limit (30km/h) 							| 
@@ -164,6 +163,7 @@ For the 1th image, this is a wrong prediction.  The model is 100% sure that this
 | 2.9994467e-28			| Roundabout mandatory							|
 | 5.5545305e-32	 		| Speed limit (120km/h)			 				|
 | 1.0700292e-34		    | Speed limit (50km/h)							|
+
 
 
 For the 2th image, the model is 100% sure that this is a children crossing sign (probability of 1) and it's indeed a children crossing sign.  The probability of 2nd possible traffic sign - 'Dangerous curve to the right' is too low.  We just treat it as 0.  The probability of all other traffic signs are all 0.
@@ -179,6 +179,7 @@ For the 2th image, the model is 100% sure that this is a children crossing sign 
 
 
 For the 3th image, the model is 100% sure that this is a stop sign (probability of 1) and the image surely is a stop sign. The probability of other traffic signs are almost 0.
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| Stop sign										| 
@@ -190,6 +191,7 @@ For the 3th image, the model is 100% sure that this is a stop sign (probability 
 
 
 For the 4th image, the model is 100% sure that this is a Speed limit (30km/h) sign (probability of 1) and the image surely is a 30km/h speed limit. The probability of other traffic signs are all 0.
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| Speed limit (30km/h)							| 
@@ -201,6 +203,7 @@ For the 4th image, the model is 100% sure that this is a Speed limit (30km/h) si
 
 
 For the 5th image, the model is 100% sure that this is a road work sign (probability of 1), and the image surely is a road work. The probability of other traffic signs are all 0.
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | 1         			| Road work   									| 
