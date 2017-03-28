@@ -144,7 +144,7 @@ Here are the results of the prediction:
 |:---------------------:|:---------------------------------------------:| 
 | Pedestrian       		| 30 km/h   									| 
 | Children crossing		| Children crossing								|
-| Stop					| Yield											|
+| Stop					| Stop											|
 | 30 km/h	      		| 30 km/h					 					|
 | Road work				| Road work		      							|
 
