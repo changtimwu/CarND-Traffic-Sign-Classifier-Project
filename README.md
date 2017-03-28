@@ -20,27 +20,25 @@ The goals / steps of this project are the following:
 [image3]: ./pics/p2pic3.png "P2 PIC"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
----
-###Writeup / README
-
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+### Files Submitted
 
 You're reading it! and here is a link to my [project code](https://github.com/changtimwu/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
-### Data Set Summary & Exploration
+### Data Exploration
+
+#### Dataset Summary 
 
 Firstly, I show number of each dataset.  The code for this step is contained in the 3rd code cell of the IPython notebook.  I used the pandas library to calculate summary statistics of the traffic signs data set:
 
 ![summary statistics][image1]
 
-
+#### Exploratory Visualization
 At the 4th code cell of the IPython notebook, I counts the number of each kind of traffic signs and show it in a table with `pandas`.  As you can see that the table is sorted,  the top three traffic signs in the dataset are `Speed limit(50kmh)`, `Speed limit(30km/h)`, and `Yield`.
 
 ![alt text][image2]
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
 ####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
