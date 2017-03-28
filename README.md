@@ -29,24 +29,16 @@ The goals / steps of this project are the following:
 
 You're reading it! and here is a link to my [project code](https://github.com/changtimwu/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-The code for this step is contained in the 3rd code cell of the IPython notebook.  
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
+Firstly, I show number of each dataset.  The code for this step is contained in the 3rd code cell of the IPython notebook.  I used the pandas library to calculate summary statistics of the traffic signs data set:
 
 ![summary statistics][image1]
 
-####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
+At the 4th code cell of the IPython notebook, I counts the number of each kind of traffic signs and show it in a table with `pandas`.  As you can see that the table is sorted,  the top three traffic signs in the dataset are `Speed limit(50kmh)`, `Speed limit(30km/h)`, and `Yield`.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
-![alt text][image1]
+![alt text][image2]
 
 ###Design and Test a Model Architecture
 
