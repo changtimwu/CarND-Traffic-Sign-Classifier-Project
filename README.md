@@ -132,8 +132,9 @@ Here are five German traffic signs that I found on the web:
 ![alt text][websign1] ![alt text][websign2] ![alt text][websign3] 
 ![alt text][websign4] ![alt text][websign5]
 
+Their size are vary and some of them are protected with watermark.  I chose these pictures with purpose to test the capability of my model..
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### Performance on New Images
 
 The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
 
@@ -141,28 +142,72 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Pedestrian       		| 30 km/h   									| 
+| Children crossing		| Children crossing								|
+| Stop					| Yield											|
+| 30 km/h	      		| 30 km/h					 					|
+| Road work				| Road work		      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%.  This compares favorably to the accuracy on the test set of 93.24%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### Model Certainty - Softmax Probabilities
+The code for making predictions on my final model is located in the 47th cell of the Ipython notebook.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+For the 1th image, this is a wrong prediction.  The model is 100% sure that this is 30km/h limit sign (probability of 1) but it's actually an pedestrian sign.  The probability of all other traffic signs are almost 0.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1         			| Speed limit (30km/h) 							| 
+| 7.9278523e-28 		| Speed limit (70km/h)							|
+| 2.9994467e-28			| Roundabout mandatory							|
+| 5.5545305e-32	 		| Speed limit (120km/h)			 				|
+| 1.0700292e-34		    | Speed limit (50km/h)							|
 
 
-For the second image ... 
+For the 2th image, the model is 100% sure that this is a children crossing sign (probability of 1) and it's indeed a children crossing sign.  The probability of 2nd possible traffic sign - 'Dangerous curve to the right' is too low.  We just treat it as 0.  The probability of all other traffic signs are all 0.
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1         			| children crossing 							| 
+| 7.9278523e-28 		| Dangerous curve to the right					|
+| .0					| N/A											|
+| .0	      			| N/A							 				|
+| .0				    | N/A			      							|
+
+
+
+For the 3th image, the model is 100% sure that this is a stop sign (probability of 1) and the image surely is a stop sign. The probability of other traffic signs are almost 0.
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1         			| Stop sign										| 
+| .0     				| N/A	 										|
+| .0					| N/A											|
+| .0	      			| N/A							 				|
+| .0				    | N/A			      							|
+
+
+
+For the 4th image, the model is 100% sure that this is a Speed limit (30km/h) sign (probability of 1) and the image surely is a 30km/h speed limit. The probability of other traffic signs are all 0.
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1         			| Speed limit (30km/h)							| 
+| .0     				| N/A	 										|
+| .0					| N/A											|
+| .0	      			| N/A							 				|
+| .0				    | N/A			      							|
+
+
+
+For the 5th image, the model is 100% sure that this is a road work sign (probability of 1), and the image surely is a road work. The probability of other traffic signs are all 0.
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1         			| Road work   									| 
+| .0     				| N/A	 										|
+| .0					| N/A											|
+| .0	      			| N/A							 				|
+| .0				    | N/A			      							|
+
+
+
